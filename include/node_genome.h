@@ -16,7 +16,7 @@ namespace yght {
 
         ~NodeGenome() {}
 
-        void add_input(const uint id) { input_ids.push_back(id) }
+        void add_input(const uint id) { input_ids.push_back(id); }
 
     };
 

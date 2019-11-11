@@ -34,7 +34,7 @@ namespace yght {
           : innovation(g.get_innovation()),
             node_in(g.get_node_in()),
             node_out(g.get_node_out()),
-            enabled(g.get_enabled()),
+            enabled(g.is_enabled()),
             weight(g.get_weight())
         { }
 
@@ -43,7 +43,7 @@ namespace yght {
         uint  get_innovation() const { return innovation; }
         uint  get_node_in()    const { return node_in;    }
         uint  get_node_out()   const { return node_out;   }
-        bool  get_enabled()    const { return enabled;    }
+        bool  is_enabled()     const { return enabled;    }
         float get_weight()     const { return weight;     }
     };
 
@@ -53,9 +53,17 @@ namespace yght {
                 "innov. "    << g.get_innovation() <<
                 ", in " << g.get_node_in() <<
                 ", out " << g.get_node_out() <<
-                ", " << (g.get_enabled() ? "enabled" : "disabled") <<
+                ", " << (g.is_enabled() ? "enabled" : "disabled") <<
                 ", weight "  << g.get_weight() <<
             " >";
+    }
+
+    bool operator<(const Gene& g, const Gene& h) {
+        return g.get_innovation() < h.get_innovation();
+    }
+
+    bool operator>(const Gene& g, const Gene& h) {
+        return g.get_innovation() > h.get_innovation();
     }
 
 } // namespace yght

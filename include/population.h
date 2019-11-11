@@ -1,6 +1,8 @@
 #ifndef YGHT_POPULATION_H
 #define YGHT_POPULATION_H
 
+#include "individual.h"
+
 namespace yght {
 
     class Population {

@@ -1,7 +1,9 @@
 #include <iostream>
 
-#include "gene.h"
-#include "genome.h"
+#include "test_parse.h"
+
+//#include "gene.h"
+//#include "genome.h"
 
 int main() {
 
@@ -9,8 +11,6 @@ int main() {
     yght::Gene h = yght::Gene(0,11,2, false, 5);
 
     yght::Genome gnm({g, g});
-
-    delete &gnm;
 
     return 0;
 }
